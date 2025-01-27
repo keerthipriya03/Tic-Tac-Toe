@@ -79,7 +79,13 @@ const checkWinner = ()=>{
 const printWinner = (ans)=>{
     display.classList.add("hide");
     msg.classList.remove("hide");
-    msg.innerText = `Congratulations Winner ${ans}`;
+    if(ans=='O'){
+        res = "Player 2";
+    }
+    else{
+        res = "Player 1";
+    }
+    msg.innerText = `Congratulations Winner is ${res}`;
     disableBoxes();
     buttons.classList.remove("hide");
 };
