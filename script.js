@@ -8,6 +8,7 @@ let buttons = document.getElementById('buttons');
 display.innerHTML="Player1 Turn";
 
 let turn1=true;
+let count=0;
 
 const arr=[
     [0,1,2],
@@ -34,31 +35,45 @@ boxes.forEach((box)=>{
         display.innerHTML="Player1 Turn";
         }
         box.disabled = true;   // to make no changes after clicking
-        checkWinner();
+        count++;
+        let isWinner=checkWinner();
+
+        if(count === 9 && !isWinner){
+            draw();
+        }
     });
 });
 
+const draw = ()=>{
+    display.classList.add("hide");
+    msg.innerText = `Draw!!!`;
+    msg.classList.remove("hide");
+    disableBoxes();
+    buttons.classList.remove("hide");
+};
+
 const resetGame = ()=>{
     turn1=true;
+    count=0;
     enableBoxes();
     msg.classList.add("hide");
     buttons.classList.add("hide");
     display.classList.remove("hide");
     display.innerHTML="Player1 Turn";
-}
+};
 
 const disableBoxes = ()=>{
     for(let box of boxes){
         box.disabled=true;
     }
-}
+};
 
 const enableBoxes = ()=>{
     for(let box of boxes){
         box.disabled=false;
         box.innerText="";
     }
-}
+};
 
 const checkWinner = ()=>{
     for(let i of arr){
@@ -71,6 +86,7 @@ const checkWinner = ()=>{
                 let ans=first;
                 console.log("WInner ",first);
                 printWinner(ans);
+                return true;
             }
         }
     }
@@ -85,7 +101,7 @@ const printWinner = (ans)=>{
     else{
         res = "Player 1";
     }
-    msg.innerText = `Congratulations Winner is ${res}`;
+    msg.innerText = `Congratulations, Winner is ${res}`;
     disableBoxes();
     buttons.classList.remove("hide");
 };
