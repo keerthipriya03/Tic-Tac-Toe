@@ -72,16 +72,14 @@ body{
 /* For mobile application */
 @media (max-width:480px){
     .container{
-        flex-direction: column;
-    }
-    .box{
+        display:flex;
         grid-template-columns: repeat(3,60px);
         grid-template-rows: repeat(3,60px);
     }
 }
 /* for tablet application */
 @media (max-width:768px){
-    .box{
+    .container{
         grid-template-columns: repeat(3,60px);
         grid-template-rows: repeat(3,60px);
     }
