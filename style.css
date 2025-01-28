@@ -69,19 +69,20 @@ body{
     border-radius: 10px;
 }
 
-@media screen and (max-width: 600px) {
-   .container{
-        display: grid;
-        height: 50%;
-        gap: 5px;
-        padding: 10px;
+/* For mobile application */
+@media (max-width:480px){
+    .container{
+        flex-direction: column;
     }
-
     .box{
-        width: 33.33%;
-        height: 200px;
-        padding-bottom: 100%;
-        color: brown;
-        background-color: orange;
+        grid-template-columns: repeat(3,60px);
+        grid-template-rows: repeat(3,60px);
+    }
+}
+/* for tablet application */
+@media (max-width:768px){
+    .box{
+        grid-template-columns: repeat(3,60px);
+        grid-template-rows: repeat(3,60px);
     }
 }
