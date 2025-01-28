@@ -72,7 +72,7 @@ body{
 /* For mobile application */
 @media (max-width:480px){
     .container{
-        display:flex;
+        display:grid;
         grid-template-columns: repeat(3,60px);
         grid-template-rows: repeat(3,60px);
     }
@@ -80,6 +80,7 @@ body{
 /* for tablet application */
 @media (max-width:768px){
     .container{
+        display:grid;
         grid-template-columns: repeat(3,60px);
         grid-template-rows: repeat(3,60px);
     }
