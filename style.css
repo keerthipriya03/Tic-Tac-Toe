@@ -70,16 +70,16 @@ body{
 }
 
 @media screen and (max-width: 600px) {
-    .container{
+   .container{
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        height: 50%;
         gap: 5px;
         padding: 10px;
     }
 
     .box{
-        width: 100%;
-        height: 0;
+        width: 33.33%;
+        height: 200px;
         padding-bottom: 100%;
         color: brown;
         background-color: orange;
