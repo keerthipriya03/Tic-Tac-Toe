@@ -76,6 +76,9 @@ body{
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: repeat(3,1fr);
     }
+    .box{
+        justify-content:center;
+        align-items:center;
 }
 /* for tablet application */
 @media (max-width:768px){
@@ -84,4 +87,7 @@ body{
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: repeat(3,1fr);
     }
+    .box{
+        justify-content:center;
+        align-items:center;
 }
